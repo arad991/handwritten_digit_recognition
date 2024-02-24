@@ -30,4 +30,35 @@ const matrix_dims bias_dims[] = {{128, 1},
 
 // Insert MlpNetwork class here...
 
+class MlpNetwork
+{
+ private:
+  Dense layers[MLP_SIZE]; // array of 4 Dense types layers
+
+
+  // to map each layer to its corresponding information
+  enum Layers
+  {
+      L1, L2, L3, L4
+  };
+
+ public:
+  /**
+   * MlpNetwork constructor
+   * @param weights array of matrix, weights[i] is the
+   *                                        i'th layer weights matrix
+   * @param biases array of matrix, biases[i] is the i'th layer bias matrix
+   *          (which is actually a vector)
+   */
+  MlpNetwork (Matrix weights[],Matrix biases[]);
+   /**
+   * Applies the entire network on input.
+   * Returns a digit struct type.
+   * @param input matrix to apply the network
+   * @return struct digit (value, probability)
+   */
+  digit operator() (const Matrix &input) const;
+
+};
+
 #endif // MLPNETWORK_H
