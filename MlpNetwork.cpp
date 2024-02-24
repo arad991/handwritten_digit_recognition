@@ -15,5 +15,6 @@ digit MlpNetwork::operator() (const Matrix &input) const
   {
     result_mat = layer (result_mat);
   }
-  return {(unsigned int) result_mat.argmax (), result_mat[result_mat.argmax ()]};
+  return {(unsigned int) result_mat.argmax (),
+          result_mat[result_mat.argmax ()]};
 }

@@ -1,7 +1,7 @@
 #include "Dense.h"
 
-
-Dense::Dense (const Matrix &weights, const Matrix &bias, ActivationFunction func)
+Dense::Dense (const Matrix &weights, const Matrix &bias,
+              ActivationFunction func)
 {
   this->weights = weights;
   this->bias = bias;
