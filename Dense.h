@@ -1,4 +1,3 @@
-// Dense.h
 #ifndef DENSE_H
 #define DENSE_H
 

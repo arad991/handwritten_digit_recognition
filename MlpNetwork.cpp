@@ -13,7 +13,7 @@ digit MlpNetwork::operator() (const Matrix &input) const
   result_mat.vectorize ();
   for (const auto &layer: layers)
   {
-    result_mat = layer (result_mat);
+    result_mat = layer (result_mat); //apply the layer to the result
   }
   return {(unsigned int) result_mat.argmax (),
           result_mat[result_mat.argmax ()]};

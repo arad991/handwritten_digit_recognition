@@ -18,13 +18,10 @@ typedef struct matrix_dims {
 class Matrix
 {
  private:
-  void delete_data () const; // private function - frees this->data's memory
+  void delete_data () const; // frees this->data's memory
   int rows, cols;
   float **data; // 2D array
-  matrix_dims dims{};
-
  public:
-
   // ***************** C'tors and D'tors *****************
   // main constructor
   Matrix (int rows, int cols);

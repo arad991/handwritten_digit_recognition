@@ -1,6 +1,4 @@
-//
-// Created by Arad on 2/23/2024.
-//
+
 #include "Activation.h"
 
 using namespace activation;

@@ -37,7 +37,7 @@ for (int i = 0; i < rows; ++i)
     }
   }
 }
-// private function - frees this->data's memory
+// frees this->data's memory
 void Matrix::delete_data () const
 {
   for (int i = 0; i < rows; i++)
@@ -345,7 +345,8 @@ std::istream &operator>> (std::istream &istream, Matrix &matrix)
   for (int i = 0; i < matrix.rows; ++i)
   {
     if (!istream.read((char *) matrix.data[i], matrix.cols * elem_size))
-    { throw std::exception(); } // handle exception
+    { throw std::exception(); } // throw exception
+    // move the cursor to the next row in the file
     istream.seekg ((i + 1) * matrix.cols * elem_size, std::ios::beg);
   }
   return istream;
