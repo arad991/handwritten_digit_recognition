@@ -108,6 +108,8 @@ void Matrix::plain_print() const
 
 Matrix Matrix::dot (const Matrix &other) const
 {
+  if (this->rows != other.rows || this->cols != other.cols)
+  { throw std::exception (); } // handle exception
   Matrix tmp (rows, cols);
   for (int i = 0; i < rows; ++i)
   {
@@ -328,7 +330,8 @@ std::ostream &operator<< (std::ostream &ostream, const Matrix &matrix)
       else
       { ostream << "  "; }
     }
-    ostream << std::endl;
+
+
   }
   return ostream;
 }
